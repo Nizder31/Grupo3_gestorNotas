@@ -10,10 +10,15 @@ public class GestorNotas {
         contador = 0;
     }
 
-    public void agregarNota(double nota) {
-        notas[contador] = nota;
-        contador++;
-    }
+    public void agregarNota(double nota) {  //Jean Fix
+    	   if (contador < notas.length) {
+    	       notas[contador] = nota;
+    	       contador++;
+    	   } else {
+    	       System.out.println("No hay espacio para más notas.");
+    	   }
+    	}
+
 
     public double calcularPromedio() {
         double suma = 0;
