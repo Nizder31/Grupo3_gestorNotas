@@ -10,7 +10,7 @@ public class GestorNotas {
         contador = 0;
     }
 
-    public void agregarNota(double nota) {
+    public void agregarNota(double nota) {  //Jean Fix
     	   if (contador < notas.length) {
     	       notas[contador] = nota;
     	       contador++;
@@ -28,7 +28,7 @@ public class GestorNotas {
         return suma / notas.length;
     }
 
-    public double obtenerNotaMaxima() {
+    public double obtenerNotaMaxima() { // Boada fix
         double max = notas[0];
         for (int i = 1; i < contador; i++) {
             if (notas[i] > max) {
