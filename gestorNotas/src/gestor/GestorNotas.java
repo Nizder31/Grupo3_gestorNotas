@@ -36,28 +36,22 @@ public class GestorNotas {
     }
 
     public double obtenerNotaMaxima() {
-
-    	   if (contador == 0) {
-    	       return 0; // o lanzar excepción
-    	   }
-
-    	   double max = notas[0];
-
-    	   for (int i = 1; i < contador; i++) {
-    	       if (notas[i] > max) {
-    	           max = notas[i];
-    	       }
-    	   }
-
-    	   return max;
-    	}
-
+        double max = notas[0];
+        for (int i = 1; i < contador; i++) {
+            if (notas[i] > max) {
+                max = notas[i];
+            }
+        }
+        return max;
+    }
 
     public void eliminarUltimaNota() {
-        if (contador > 0) {
-            contador--;
-        }
-    }
+    	   if (contador > 0) {
+    	       contador--;
+    	       notas[contador] = 0;
+    	   }
+    	}
+
 
     public void mostrarNotas() {
         for (int i = 0; i < contador; i++) {
