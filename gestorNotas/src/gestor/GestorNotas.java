@@ -10,14 +10,17 @@ public class GestorNotas {
         contador = 0;
     }
 
-    public void agregarNota(double nota) {  //Jean Fix
-    	   if (contador < notas.length) {
-    	       notas[contador] = nota;
-    	       contador++;
-    	   } else {
-    	       System.out.println("No hay espacio para más notas.");
-    	   }
-    	}
+    public void agregarNota(double nota) {
+        if (nota < 0 || nota > 10) {
+            throw new IllegalArgumentException("La nota debe estar entre 0 y 10.");
+        }
+
+        if (contador >= notas.length) {
+            throw new IllegalStateException("No hay espacio para más notas.");
+        }
+
+        notas[contador++] = nota;
+    }
 
 
     public double calcularPromedio() {
