@@ -21,11 +21,15 @@ public class GestorNotas {
 
 
     public double calcularPromedio() {
+        if (contador == 0) {
+            throw new IllegalStateException("No hay notas registradas.");
+        }
+
         double suma = 0;
-        for (int i = 0; i < notas.length; i++) {
+        for (int i = 0; i < contador; i++) {
             suma += notas[i];
         }
-        return suma / notas.length;
+        return suma / contador;
     }
 
     public double obtenerNotaMaxima() {
