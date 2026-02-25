@@ -88,16 +88,16 @@ public class GestorNotas {
 
         for (int i = 0; i < contador; i++) {
 
+            if (notas[i] < 0 || notas[i] > 10) {
+                return "Existen notas fuera de rango.";
+            }
+
             suma += notas[i];
 
             if (notas[i] >= 5) {
                 aprobados++;
             } else {
                 suspensos++;
-            }
-
-            if (notas[i] < 0 || notas[i] > 10) {
-                return "Existen notas fuera de rango.";
             }
         }
 
